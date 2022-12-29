@@ -7,7 +7,7 @@ plugins {
     application
 }
 
-group = "com.code.vertx"
+group = "com.code.greenbay.app"
 version = "1.0-SNAPSHOT"
 
 repositories {
