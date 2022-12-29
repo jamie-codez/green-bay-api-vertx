@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09658ab6-774a-43cb-89da-c27f692019d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/greenbay.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/DBService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/DBService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/MainService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/MainService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/Utils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/user/AuthService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/user/AuthService.kt" afterDir="false" />
     </list>
@@ -78,96 +81,16 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.MainServiceKt">
-    <configuration name="AuthTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.code.greenbat.tests.AuthTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="greenbay | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/greenbay.http" index="3" requestIdentifier="Login" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="AuthTests.loginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.code.greenbat.tests.AuthTests.loginTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="greenbay | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/greenbay.http" index="2" requestIdentifier="Register" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="AuthTests.signUp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.code.greenbat.tests.AuthTests.signUp&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="greenbay | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/greenbay.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="PingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.code.greenbat.tests.PingTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="greenbay | ######## Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/greenbay.http" index="2" requestIdentifier="######## Register" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="MainServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
@@ -179,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.greenbay | Login" />
+        <item itemvalue="HTTP Request.greenbay | Register" />
+        <item itemvalue="HTTP Request.greenbay | #1" />
         <item itemvalue="Kotlin.MainServiceKt" />
-        <item itemvalue="Gradle.AuthTests.loginTest" />
-        <item itemvalue="Gradle.AuthTests.signUp" />
-        <item itemvalue="Gradle.AuthTests" />
-        <item itemvalue="Gradle.PingTest" />
+        <item itemvalue="HTTP Request.greenbay | ######## Register" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +121,7 @@
       <workItem from="1672224860498" duration="3204000" />
       <workItem from="1672230545239" duration="8803000" />
       <workItem from="1672254998605" duration="11429000" />
-      <workItem from="1672339062824" duration="2392000" />
+      <workItem from="1672339062824" duration="11071000" />
     </task>
     <servers />
   </component>

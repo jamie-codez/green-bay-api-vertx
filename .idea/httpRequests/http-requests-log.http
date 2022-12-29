@@ -1,0 +1,230 @@
+POST http://127.0.0.1:8000/api/v1/login
+Content-Type: application/json
+Content-Length: 65
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "testuser@email.com",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T013228.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T011703.200.json
+
+###
+
+GET http://127.0.0.1:8001/api/v1/
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2022-12-30T011700.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T011119.400.json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T011116.400.json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/login
+Content-Type: application/json
+Content-Length: 65
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "testuser@email.com",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T010956.200.txt
+
+###
+
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T010945.200.json
+
+###
+
+POST http://127.0.0.1:8001/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T005418.500.txt
+
+###
+
+GET http://127.0.0.1:8001/api/v1/
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2022-12-30T005340.200.json
+
+###
+
+POST http://127.0.0.1:8001/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T005234.500.txt
+
+###
+
+POST http://127.0.0.1:8001/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T005206.500.txt
+
+###
+
+POST http://127.0.0.1:8001/api/v1/register
+Content-Type: application/json
+Content-Length: 185
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+<> 2022-12-30T005201.500.txt
+
+###
+
+GET http://127.0.0.1:8001/api/v1/
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2022-12-30T005153.200.json
+
+###
+

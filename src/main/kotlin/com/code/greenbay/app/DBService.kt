@@ -18,7 +18,7 @@ class DBService : AbstractVerticle() {
     }
 
     fun saveUser(rc: RoutingContext, body: JsonObject) {
-        mongoClient.save(Utils.user_db, body) {
+        mongoClient.save(Utils.user_tbl, body) {
             if (it.succeeded()) {
                 rc.response().setStatusCode(OK.code()).end(
                     JsonObject().put("message", "User created successfully\nCheck mail to activate").encodePrettily()

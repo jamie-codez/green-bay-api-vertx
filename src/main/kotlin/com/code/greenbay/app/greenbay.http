@@ -1,0 +1,26 @@
+GET http://127.0.0.1:8001/api/v1/
+Content-Type: application/json
+
+### Register
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+
+{
+  "username": "Test User",
+  "firstName": "Test",
+  "middleName": " ",
+  "lastName": "User",
+  "email": "testuser@email.com",
+  "phoneNo": "0712345678",
+  "password": "Password-1,2"
+}
+
+### Login
+
+POST http://127.0.0.1:8000/api/v1/login
+Content-Type: application/json
+
+{
+  "email": "testuser@email.com",
+  "password": "Password-1,2"
+}
