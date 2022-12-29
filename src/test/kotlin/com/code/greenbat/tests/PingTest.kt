@@ -5,7 +5,6 @@ import com.code.greenbay.app.Utils
 import io.vertx.core.Vertx
 import io.vertx.core.http.HttpMethod.GET
 import io.vertx.core.json.JsonObject
-import io.vertx.ext.web.client.WebClient
 import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
 import org.assertj.core.api.Assertions.assertThat
@@ -29,12 +28,6 @@ class PingTest {
         vertx.close(tc.succeeding { tc.completeNow() })
     }
 
-//    @Test
-//    @DisplayName("Ping test")
-//    fun pingTest(vertx: Vertx, tc: VertxTestContext) {
-//        WebClient.create(vertx)
-//            .get(Utils.app_port,Utils.local_address)
-//    }
     @Test
     @DisplayName("Ping test")
     fun pingTest(vertx: Vertx, tc: VertxTestContext) {
@@ -50,6 +43,7 @@ class PingTest {
                             "Server is up and running on port ${Utils.app_port}"
                         )
                     )
+
                 }
                 tc.completeNow()
             }

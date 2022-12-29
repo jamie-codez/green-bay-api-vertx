@@ -20,6 +20,7 @@ dependencies {
     implementation("com.auth0:java-jwt:4.2.1")
     implementation("io.vertx:vertx-mail-client:4.3.7")
     implementation("io.vertx:vertx-web-client:4.3.7")
+    implementation("io.vertx:vertx-junit5-web-client:3.9.14")
     implementation(dependencyNotation = "io.vertx:vertx-mongo-client:4.3.7")
     testImplementation("io.vertx:vertx-junit5:4.3.7")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")
