@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09658ab6-774a-43cb-89da-c27f692019d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/DBService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/Utils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/user/AuthService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/code/greenbay/app/user/AuthService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/code/greenbat/tests/AuthTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/code/greenbat/tests/AuthTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/code/greenbat/tests/PingTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/code/greenbat/tests/PingTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +198,7 @@
       <workItem from="1672224860498" duration="3204000" />
       <workItem from="1672230545239" duration="8803000" />
       <workItem from="1672254998605" duration="11429000" />
+      <workItem from="1672339062824" duration="2392000" />
     </task>
     <servers />
   </component>
