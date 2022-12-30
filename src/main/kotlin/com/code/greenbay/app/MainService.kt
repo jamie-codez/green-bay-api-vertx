@@ -36,6 +36,10 @@ class MainService : AbstractVerticle() {
     }
 
     private fun ping(rc: RoutingContext) {
+        println("address: ${rc.request().localAddress().hostAddress()}")
+        println("host-name: ${rc.request().localAddress().hostName()}")
+        println("port: ${rc.request().localAddress().port()}")
+        println("path: ${rc.request().path()}")
         rc.response().putHeader("Content-Type", "application/json")
             .setStatusCode(OK.code())
             .end(

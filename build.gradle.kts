@@ -21,6 +21,7 @@ dependencies {
     implementation("io.vertx:vertx-mail-client:4.3.7")
     implementation("io.vertx:vertx-web-client:4.3.7")
     implementation("io.vertx:vertx-junit5-web-client:3.9.14")
+    implementation("org.springframework.security:spring-security-crypto:6.0.1")
     implementation(dependencyNotation = "io.vertx:vertx-mongo-client:4.3.7")
     testImplementation("io.vertx:vertx-junit5:4.3.7")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.0")

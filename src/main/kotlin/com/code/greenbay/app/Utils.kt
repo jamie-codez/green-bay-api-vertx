@@ -30,6 +30,7 @@ class Utils {
             emailAddress: String,
             mailSubject: String,
             link: String? = "",
+            code:String?="",
             mailBody: String,
             htmlString: String,
             logger: Logger,
@@ -59,7 +60,7 @@ class Utils {
                     logger.info("INFO: Mail sent successfully.")
                     if (command == "activation") {
                         mongoClient!!.save(
-                            Utils.activation_code_tbl, JsonObject().put("email", emailAddress).put("code", link)
+                            Utils.activation_code_tbl, JsonObject().put("email", emailAddress).put("code", code)
                         ) { ar ->
                             if (ar.succeeded()) {
                                 logger.info("INFO: Activation link saved successfully")
