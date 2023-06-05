@@ -3,8 +3,10 @@ package com.greenbay.api.utils
 import io.vertx.core.Vertx
 import io.vertx.core.impl.logging.LoggerFactory
 import io.vertx.core.json.JsonObject
+import io.vertx.ext.mongo.BulkOperation
 import io.vertx.ext.mongo.FindOptions
 import io.vertx.ext.mongo.MongoClient
+import io.vertx.ext.mongo.MongoClientBulkWriteResult
 
 /**
  * The Database Utilities class for DB operations
@@ -110,6 +112,34 @@ class DatabaseUtils(private val vertx: Vertx) {
     }
 
     /**
+     * Saves many documents in the parsed collection asynchronously
+     * @param collection The collection to house the documents
+     * @param bulkOperation The documents to be bulk written
+     * @param success The callback function called when operation is successful
+     * @param fail The callback function called when operation fails
+     * @author Jamie Omondi
+     * @since 05-06-2023
+     */
+    fun bulkSave(
+        collection: String,
+        bulkOperation: List<BulkOperation>,
+        success: (result: MongoClientBulkWriteResult) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("bulkSave() -->")
+        this.getMongoClient().bulkWrite(collection,bulkOperation){
+            if (it.succeeded()){
+                success(it.result())
+            }else{
+                logger.error("bulkSave(${it.cause().message}) <--")
+                fail(it.cause())
+            }
+        }
+        logger.info("bulkSave() <--")
+    }
+
+
+    /**
      * Creates an index in the parsed collection on the fields parsed
      * @param collection The collection housing the documents to be indexed
      * @param fields The fields to be indexed
@@ -145,7 +175,7 @@ class DatabaseUtils(private val vertx: Vertx) {
      * @author Jamie Omondi
      * @since 05-06-2023
      */
-    fun createIndex(
+    fun dropIndex(
         collection: String,
         indexName: String,
         success: (void: Void) -> Unit,
@@ -244,6 +274,35 @@ class DatabaseUtils(private val vertx: Vertx) {
             }
         }
         logger.info("findWithOptions() <--")
+    }
+
+    /**
+     * Finds One document and updates in the parsed collection and updates the parsed fields
+     * @param collection The collection housing the document to be updated
+     * @param query The query used to filter and located the document
+     * @param update The update payload
+     * @param success The callback function called when operation is successful
+     * @param fail The callback function called when operation is successful
+     * @author Jamie Omondi
+     * @since 05-06-2023
+     */
+    fun findOneAndUpdate(
+        collection: String,
+        query: JsonObject,
+        update: JsonObject,
+        success: (result: JsonObject) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("findOneAndUpdate() -->")
+        this.getMongoClient().findOneAndUpdate(collection, query, update) {
+            if (it.succeeded()) {
+                success(it.result())
+            } else {
+                logger.error("findOneAndUpdate(${it.cause().message}) <--")
+                fail(it.cause())
+            }
+        }
+        logger.info("findOneAndUpdate() <--")
     }
 
 
