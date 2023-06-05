@@ -1,3 +1,3 @@
 
-rootProject.name = "vertx"
+rootProject.name = "backend"
 
