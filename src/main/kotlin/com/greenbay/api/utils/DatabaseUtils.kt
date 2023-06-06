@@ -2,8 +2,11 @@ package com.greenbay.api.utils
 
 import io.vertx.core.Vertx
 import io.vertx.core.impl.logging.LoggerFactory
+import io.vertx.core.json.JsonArray
 import io.vertx.core.json.JsonObject
+import io.vertx.ext.mongo.AggregateOptions
 import io.vertx.ext.mongo.BulkOperation
+import io.vertx.ext.mongo.CountOptions
 import io.vertx.ext.mongo.FindOptions
 import io.vertx.ext.mongo.MongoClient
 import io.vertx.ext.mongo.MongoClientBulkWriteResult
@@ -127,10 +130,10 @@ class DatabaseUtils(private val vertx: Vertx) {
         fail: (throwable: Throwable) -> Unit
     ) {
         logger.info("bulkSave() -->")
-        this.getMongoClient().bulkWrite(collection,bulkOperation){
-            if (it.succeeded()){
+        this.getMongoClient().bulkWrite(collection, bulkOperation) {
+            if (it.succeeded()) {
                 success(it.result())
-            }else{
+            } else {
                 logger.error("bulkSave(${it.cause().message}) <--")
                 fail(it.cause())
             }
@@ -277,6 +280,128 @@ class DatabaseUtils(private val vertx: Vertx) {
     }
 
     /**
+     * Use aggregation to fetch data
+     * @param collection The collection housing the documents
+     * @param pipeline The query pipeline
+     * @param success The callback function called when operation is successful
+     * @param fail The callback function called when operation failed
+     * @author Jamie Omondi
+     * @since 06-06-2023
+     */
+    fun aggregate(
+        collection: String,
+        pipeline: JsonArray,
+        success: (result: List<JsonObject>) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("aggregate() -->")
+        val data = ArrayList<JsonObject>()
+        this.getMongoClient().aggregate(collection, pipeline)
+            .handler {
+                logger.info("aggregate(Streaming data...) <--")
+                data.add(it)
+            }
+            .endHandler {
+                logger.info("aggregate(Finished streaming data...) <--")
+                success(data)
+            }
+            .exceptionHandler {
+                logger.error("aggregate(${it.message}) <--")
+                fail(it)
+            }
+        logger.info("aggregate() <--")
+    }
+
+    /**
+     * Get the count of documents in a given collection with the parsed query
+     * @param collection The collection housing the documents
+     * @param query The query used for filtering the data
+     * @param success the callback function called when result is successful
+     * @param fail The callback function called when operation failed
+     * @author Jamie Omondi
+     * @since 06-06-2023
+     */
+    fun count(
+        collection: String,
+        query: JsonObject,
+        success: (result:Long) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("count() -->")
+        this.getMongoClient().count(collection, query){
+            if (it.succeeded()){
+                success(it.result())
+            }else{
+                fail(it.cause())
+            }
+        }
+        logger.info("count() <--")
+    }
+
+    /**
+     * Get the count of documents in a given collection with the parsed query
+     * @param collection The collection housing the documents
+     * @param query The query used for filtering the data
+     * @param success the callback function called when result is successful
+     * @param fail The callback function called when operation failed
+     * @author Jamie Omondi
+     * @since 06-06-2023
+     */
+    fun countWithOptions(
+        collection: String,
+        query: JsonObject,
+        options:CountOptions,
+        success: (result:Long) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("countWithOptions() -->")
+        this.getMongoClient().countWithOptions(collection, query,options){
+            if (it.succeeded()){
+                success(it.result())
+            }else{
+                logger.error("countWithOptions(${it.cause().message}) <--")
+                fail(it.cause())
+            }
+        }
+        logger.info("countWithOptions() <--")
+    }
+
+
+    /**
+     * Use aggregation to fetch data with the parsed options
+     * @param collection The collection housing the documents
+     * @param pipeline The query pipeline
+     * @param success The callback function called when operation is successful
+     * @param fail The callback function called when operation failed
+     * @author Jamie Omondi
+     * @since 06-06-2023
+     */
+    fun aggregateWithOptions(
+        collection: String,
+        pipeline: JsonArray,
+        options: AggregateOptions,
+        success: (result: List<JsonObject>) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("aggregateWithOptions() -->")
+        val data = ArrayList<JsonObject>()
+        this.getMongoClient().aggregateWithOptions(collection, pipeline, options)
+            .handler {
+                logger.info("aggregateWithOptions(Streaming data...) <--")
+                data.add(it)
+            }
+            .endHandler {
+                logger.info("aggregateWithOptions(Finished streaming data...) <--")
+                success(data)
+            }
+            .exceptionHandler {
+                logger.error("aggregateWithOptions(${it.message}) <--")
+                fail(it)
+            }
+        logger.info("aggregateWithOptions() <--")
+    }
+
+    /**
      * Finds One document and updates in the parsed collection and updates the parsed fields
      * @param collection The collection housing the document to be updated
      * @param query The query used to filter and located the document
@@ -303,6 +428,60 @@ class DatabaseUtils(private val vertx: Vertx) {
             }
         }
         logger.info("findOneAndUpdate() <--")
+    }
+
+    /**
+     * Finds a document in the parsed collection with the query parsed and deletes the documents
+     * @param collection The collection housing the document
+     * @param query The query used to filter the data
+     * @param success The callback function called when operation is successful
+     * @param fail The callback function called when operation failed
+     * @author Jamie Omondi
+     * @since 06-06-2023
+     */
+    fun findOneAndDelete(
+        collection: String,
+        query: JsonObject,
+        success: (result: JsonObject) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("findOneAndDelete() -->")
+        this.getMongoClient().findOneAndDelete(collection, query) {
+            if (it.succeeded()) {
+                success(it.result())
+            } else {
+                logger.error("findOneAndDelete(${it.cause().message}) <--")
+                fail(it.cause())
+            }
+        }
+        logger.info("findOneAndDelete() <--")
+    }
+
+    /**
+     * Finds a document in the parsed collection with the query parsed and deletes the documents-> works same as findOneAndDelete
+     * @param collection The collection housing the document
+     * @param query The query used to filter the data
+     * @param success The callback function called when operation is successful
+     * @param fail The callback function called when operation failed
+     * @author Jamie Omondi
+     * @since 06-06-2023
+     */
+    fun removeDocument(
+        collection: String,
+        query: JsonObject,
+        success: (result: JsonObject) -> Unit,
+        fail: (throwable: Throwable) -> Unit
+    ) {
+        logger.info("removeDocument() -->")
+        this.getMongoClient().removeDocument(collection, query) {
+            if (it.succeeded()) {
+                success(it.result().toJson())
+            } else {
+                logger.error("removeDocument(${it.cause().message}) <--")
+                fail(it.cause())
+            }
+        }
+        logger.info("removeDocument() <--")
     }
 
 
