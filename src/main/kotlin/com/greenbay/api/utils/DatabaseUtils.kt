@@ -1,5 +1,6 @@
 package com.greenbay.api.utils
 
+import io.vertx.core.MultiMap
 import io.vertx.core.Vertx
 import io.vertx.core.impl.logging.LoggerFactory
 import io.vertx.core.json.JsonArray
