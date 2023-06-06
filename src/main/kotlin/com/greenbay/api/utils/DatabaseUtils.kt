@@ -342,6 +342,7 @@ class DatabaseUtils(private val vertx: Vertx) {
      * Get the count of documents in a given collection with the parsed query
      * @param collection The collection housing the documents
      * @param query The query used for filtering the data
+     * @param options The count options for filtering the data
      * @param success the callback function called when result is successful
      * @param fail The callback function called when operation failed
      * @author Jamie Omondi
